@@ -12,6 +12,7 @@ private:
 
 public:
     Play(); //constructor
+    void playGame(); //begins round for player
     std::string guessLetter(); //player guesses a letter
     std::string guessPhrase(); //player guesses the phrase
     bool checkLetter(std::string guess); //checks if player's guess is correct or not
