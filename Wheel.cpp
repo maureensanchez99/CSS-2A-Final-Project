@@ -44,7 +44,7 @@ string Wheel::getRandomScore()
 void Wheel::displayScores()
 {
   cout << "WHEEL OF FORTUNE\n";
-  for (int i = 0 ; i <25 ; i++)
+  for (int i = 0 ; i < 25 ; i++)
   {
     cout << scores[i] << " | ";
   }
