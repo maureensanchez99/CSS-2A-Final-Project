@@ -1,3 +1,4 @@
+//Parent class for project
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
 
@@ -12,9 +13,9 @@ private:
 
 public:
     std::string getPhrase() const; //gets the phrase the players are guessing from the Phrase class
-    void displayPhrase();
-    void turnOPtion();
-    void updateScore();
+    void displayPhrase(); //displays phrase in progress for players
+    void turnOption();// player chooses how they move onto their next move if their first move of guessing a letter is correct
+    void updateScore(); //updates player's score after their turn
 
 };
 

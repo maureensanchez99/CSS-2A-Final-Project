@@ -1,6 +1,6 @@
-#include "Play.h"
 #include <iostream>
 #include <string>
+#include "Play.h"
 using namespace std;
 
 Play::Play(){
@@ -35,13 +35,5 @@ bool checkLetter(std::string guess){
 }
 
 bool checkPhrase(std::string guess){
-
-}
-
-std::string Play::getPhrase() const{
-
-
-}
-void Play::turnOption(){
 
 }
