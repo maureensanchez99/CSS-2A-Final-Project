@@ -5,9 +5,11 @@
 #include <iostream>
 
 class Game{
+protected:
+    std::string correctPhrase; //phrase that players have to guess; created by Phrase class
+
 private:
 	std::string guess; //player guesses a letter or phrase
-    std::string correctPhrase; //phrase that players have to guess; created by Phrase class
     int playerOption; //what player decides to do for their turn
     int score;
 

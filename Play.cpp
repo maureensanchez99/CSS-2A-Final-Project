@@ -38,8 +38,10 @@ void Play::guessPhrase(){
 }
 
 bool checkLetter(std::string guess){
-    for(int i = 0; i < Game::correctPhrase.size(); i++){
-        string phraseLetter = Game::correctPhrase[i];
+    string phrase = Game::getPhrase();
+    int size = phrase.size();
+    for(int i = 0; i < size; i++){
+        string phraseLetter = correctPhrase[i];
         if(guess == phraseLetter){
             cout << "";
             return true;
