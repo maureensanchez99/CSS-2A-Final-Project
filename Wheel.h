@@ -9,7 +9,6 @@ private:
 
 public:
   Wheel();
-  void setScores ();
   string getRandomScore();
   void displayScores();
 
