@@ -8,15 +8,14 @@
 class Play: public Game {
 private:
     std::string guess;
-    std::string correctPhrase;
     int playerOption;
 
 public:
-    Play(); //constructor
-    void playGame(); //begins round for player
-    std::string guessLetter(); //player guesses a letter
-    std::string guessPhrase(); //player guesses the phrase
-    bool checkLetter(std::string guess); //checks if player's guess is correct or not
+    Play();//constructor
+    void playGame();//begins round for player
+    void guessLetter();//player guesses a letter
+    void guessPhrase();//player guesses the phrase
+    bool checkLetter(std::string guess);//checks if player's guess is correct or not
     bool checkPhrase(std::string guess);//checks if player's guess is correct or not
 };
 

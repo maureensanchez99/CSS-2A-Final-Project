@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-std::string Game::getPhrase() const{ //gets the phrase the players are guessing from the Phrase class
+std::string Game::getPhrase(){ //gets the phrase the players are guessing from the Phrase class
     return correctPhrase;
 }
 

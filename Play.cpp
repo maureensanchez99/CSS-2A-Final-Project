@@ -20,20 +20,41 @@ void Play::playGame(){
 
 }
 
-std::string Play::guessLetter(){
+void Play::guessLetter(){
+    bool checkGuess = false;
     cout << "Guess a letter that you think is part of the phrase: ";
     cin >> guess;
+    checkGuess = checkLetter(guess);
+    if(checkGuess == false){
+
+    } else {
+
+    }
 }
 
-std::string Play::guessPhrase(){
+void Play::guessPhrase(){
     cout << "Guess the phrase: ";
     cin >> guess;
 }
 
 bool checkLetter(std::string guess){
-
+    for(int i = 0; i < Game::correctPhrase.size(); i++){
+        string phraseLetter = Game::correctPhrase[i];
+        if(guess == phraseLetter){
+            cout << "";
+            return true;
+        }
+    }
+    return false;
 }
 
 bool checkPhrase(std::string guess){
-
+    for(int i = 0; i < correctPhrase.size(); i++){
+        string phraseLetter = correctPhrase[i];
+        if(guess == phraseLetter){
+            cout << "";
+            return true;
+        }
+    }
+    return false;
 }
