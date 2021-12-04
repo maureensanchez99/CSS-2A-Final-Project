@@ -5,13 +5,11 @@ using namespace std;
 
 Player::Player(){
   name = "unknown player";
-  totalScore = {0};
   playerGuess = ' ';
 }
 
 Player::Player(string name_){
   name = name_;
-  totalScore = {0};
 }
 
 void Player::setName(string name_){

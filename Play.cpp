@@ -23,8 +23,8 @@ void Play::playGame(){
 void Play::guessLetter(){
     bool checkGuess = false;
     cout << "Guess a letter that you think is part of the phrase: ";
-    cin >> guess;
-    checkGuess = checkLetter(guess);
+    cin >> Game::guessLetter;
+    checkGuess = checkLetter(Game::guessLetter);
     if(checkGuess == false){
 
     } else {
@@ -37,11 +37,11 @@ void Play::guessPhrase(){
     cin >> guess;
 }
 
-bool Play::checkLetter(std::string guess){
+bool Play::checkLetter(char guessLetter){
     string phrase = Game::getPhrase();
     for(int i = 0; i < Game::correctPhrase.size(); i++){
-        string phraseLetter = correctPhrase[i];
-        if(guess == phraseLetter){
+        char phraseLetter = correctPhrase[i];
+        if(guessLetter == phraseLetter){
             cout << "That's correct!";
             return true;
         }
@@ -49,12 +49,11 @@ bool Play::checkLetter(std::string guess){
     return false;
 }
 
-bool Play::checkPhrase(std::string guess){
+bool Play::checkPhrase(std::string guessPhrase){
     for(int i = 0; i < correctPhrase.size(); i++){
-        string phraseLetter = correctPhrase[i];
-        if(guess == phraseLetter){
-            cout << "";
-            return true;
+        char phraseLetter = correctPhrase[i];
+        for(int i = 0; i < guessPhrase.size(); i++){
+
         }
     }
     return false;
