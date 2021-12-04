@@ -12,9 +12,9 @@ private:
 
 public:
     Play();//constructor
-    void playGame();//begins round for player
-    void guessLetter();//player guesses a letter
-    void guessPhrase();//player guesses the phrase
+    bool playGame();//begins round for player
+    bool guessLetter();//player guesses a letter
+    bool guessPhrase();//player guesses the phrase
     bool checkLetter(char guessLetter);//checks if player's guess is correct or not
 };
 

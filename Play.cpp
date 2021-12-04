@@ -8,31 +8,29 @@ Play::Play(){
     playerOption = 0;
 }
 
-void Play::playGame(){
-    //calls for display of phrase
-    //player spins wheel
-    /*if (players haven't guessed letters in phrase){
-        guessLetter();
-    } else {
+bool Play::playGame(){
+    Game::displayPhrase();
+    guessLetter();
 
-    }*/
 
+    return true;//ends turn for player
 }
 
-void Play::guessLetter(){
-    bool checkGuess = false;
+bool Play::guessLetter(){
+    bool checkGuess = false, continueTurn = false;
     cout << "Guess a letter that you think is part of the phrase: ";
     cin >> Game::letterGuess;
     checkGuess = checkLetter(Game::letterGuess);
     if(checkGuess == false){
-        cout << "That letter is not in the phrase.";
+        cout << "That letter is not in the phrase. Your turn is over" << endl;
     }
 }
 
-void Play::guessPhrase(){
+bool Play::guessPhrase(){
     cout << "Guess the phrase: ";
     cin >> guess;
     bool isCorrect = Game::checkPhrase(guess);
+    return isCorrect;
 }
 
 bool Play::checkLetter(char letterGuess){
