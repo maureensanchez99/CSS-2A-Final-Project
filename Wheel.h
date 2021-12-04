@@ -8,9 +8,9 @@ private:
  string scores[25];
 
 public:
-  Wheel();
-  string getRandomScore();
-  void displayScores();
+  Wheel(); // the scores are set in the array, they can't be altered
+  string getRandomScore();// returns a random score
+  void displayScores(); // displays all the possibe scores
 
 };
 
