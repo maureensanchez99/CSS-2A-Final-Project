@@ -7,7 +7,7 @@ using namespace std;
 class Player {
 private:
   string name;
-  vector<int> totalScore;
+  vector<int> totalScore;//holds players total score throughout the game
   char playerGuess;
 
 public:

@@ -10,6 +10,8 @@
 using namespace std;
 
 int main(){
+    vector<Player> players;//holds all player info
+
 
 
     return 0;
