@@ -37,20 +37,19 @@ void Play::guessPhrase(){
     cin >> guess;
 }
 
-bool checkLetter(std::string guess){
+bool Play::checkLetter(std::string guess){
     string phrase = Game::getPhrase();
-    int size = phrase.size();
-    for(int i = 0; i < size; i++){
+    for(int i = 0; i < Game::correctPhrase.size(); i++){
         string phraseLetter = correctPhrase[i];
         if(guess == phraseLetter){
-            cout << "";
+            cout << "That's correct!";
             return true;
         }
     }
     return false;
 }
 
-bool checkPhrase(std::string guess){
+bool Play::checkPhrase(std::string guess){
     for(int i = 0; i < correctPhrase.size(); i++){
         string phraseLetter = correctPhrase[i];
         if(guess == phraseLetter){
