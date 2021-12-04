@@ -1,3 +1,4 @@
+//Parent class function definitions
 #include "Game.h"
 #include <string>
 #include <iostream>

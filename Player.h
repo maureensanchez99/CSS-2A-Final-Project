@@ -4,12 +4,12 @@ using namespace std;
 #include <vector>
 #include <string>
 
-class Player 
-{
+class Player {
 private:
   string name;
   vector<int> totalScore;
   char playerGuess;
+
 public:
   Player();
   Player(string name_);
