@@ -7,7 +7,7 @@
 class Game{
 protected:
     std::string correctPhrase; //phrase that players have to guess; created by Phrase class
-	char guessLetter; //player guesses a letter
+	char letterGuess; //player guesses a letter
     std::string guessPhrase; //or phrase
     int playerOption; //what player decides to do for their turn
     int score;
@@ -17,6 +17,7 @@ public:
     void displayPhrase(); //displays phrase in progress for players
     void turnOption();// player chooses how they move onto their next move if their first move of guessing a letter is correct
     void updateScore(); //updates player's score after their turn
+    bool checkPhrase(std::string guessPhrase);//checks if player's guess is correct or not
 };
 
 #endif // GAME_H_INCLUDED

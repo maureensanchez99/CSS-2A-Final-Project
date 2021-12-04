@@ -10,7 +10,7 @@ std::string Game::getPhrase(){ //gets the phrase the players are guessing from t
 
 void Game::displayPhrase(){
     for(int i = 0; i < correctPhrase.size(); i++){
-        cout << correctPhrase[i];
+        cout << correctPhrase[i] << " ";
     }
 }
 

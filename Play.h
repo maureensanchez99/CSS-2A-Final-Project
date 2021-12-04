@@ -16,7 +16,6 @@ public:
     void guessLetter();//player guesses a letter
     void guessPhrase();//player guesses the phrase
     bool checkLetter(char guessLetter);//checks if player's guess is correct or not
-    bool checkPhrase(std::string guessPhrase);//checks if player's guess is correct or not
 };
 
 #endif // PLAY_H_INCLUDED
