@@ -38,9 +38,11 @@ int main(){
     bool gameOver = false;
 
     cout << "Welcome to Wheel of Fortune!" << endl << endl;
+    cout << "Play alone or with others to figure out what is the\nhidden phrase with only knowing how many words and\nletters there should be a category hint relating to the phrase."
+        << endl << endl;
     addPlayers(players);//game starts out by getting players' names
     while(gameOver == false){
-        for(int i = 0; gameOver != false; i++){
+        for(int i = 0; i > 0 && gameOver != false; i++){
             gameStart.playGame();
         }
     }

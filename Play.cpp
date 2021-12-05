@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Play.h"
+#include "Player.h"
 using namespace std;
 
 Play::Play(){
@@ -10,6 +11,7 @@ Play::Play(){
 
 bool Play::playGame(){
     Game::displayPhrase();
+    cout << "It is Player " << Player::getName() << "'s turn" << endl;
     guessLetter();
 
 
@@ -24,6 +26,7 @@ bool Play::guessLetter(){
     if(checkGuess == false){
         cout << "That letter is not in the phrase. Your turn is over" << endl;
     }
+    return continueTurn;
 }
 
 bool Play::guessPhrase(){
