@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void addPlayers(vector<Player> &players){
+void addPlayers(vector<Player> &players){//adds players to vector to hold each player as an object
     int playerNumber = 0;
     string userName = "";
     cout << "How many players will be playing? ";
@@ -32,6 +32,14 @@ void addPlayers(vector<Player> &players){
 
 }
 
+bool playerTurn(){
+    bool endGame = false;
+    for(int i = 0; endGame = false; i++){
+
+    }
+    return true;
+}
+
 int main(){
     vector<Player> players(4);//holds all player info in vector as objects
     Play gameStart;
@@ -42,9 +50,11 @@ int main(){
         << endl << endl;
     addPlayers(players);//game starts out by getting players' names
     while(gameOver == false){
-        for(int i = 0; i > 0 && gameOver != false; i++){
-            gameStart.playGame();
-        }
-    }
+        gameOver = playerTurn();
+        //add for loop into Play::playGame and send vector reference as a parameter
+    }//add if loop in for loop so it can determine who's turn it is
+
+    cout << "\nGame over! Congrats Player " << "on your win!"; //need to figure out how to determine which player is the winner; maybe make another variable in Player class?
+
     return 0;
 }

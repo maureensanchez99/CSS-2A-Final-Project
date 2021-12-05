@@ -6,6 +6,7 @@ using namespace std;
 Player::Player(){
   name = "unknown player";
   playerGuess = ' ';
+  gameWinner = false;
 }
 
 Player::Player(string name_){
@@ -24,8 +25,16 @@ void Player::setPlayerGuess(char playerGuess_){
   playerGuess = playerGuess_;
 }
 
-char Player::getPLayerGuess() const{
+char Player::getPlayerGuess() const{
   return playerGuess;
+}
+
+void Player::setGameWinner(bool winner){
+    gameWinner = winner;
+}
+
+bool Player::getGameWinner() const{
+    return gameWinner;
 }
 
 void Player::addToTotalScore(int score_){
@@ -37,5 +46,5 @@ void Player::displayAddedScores(){
   for (int i = 0; i < totalScore.size(); i++){
     playerScore += totalScore[i];
   }
-  cout << name << " currently has " << playerScore << ".\n";
+  cout << name << " currently has " << playerScore << " points.\n";
 }

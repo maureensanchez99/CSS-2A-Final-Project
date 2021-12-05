@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include "Game.h"
+#include "Player.h"
 
 class Play: public Game {
 private:
