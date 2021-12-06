@@ -35,7 +35,15 @@ void addPlayers(vector<Player> &players){//adds players to vector to hold each p
 bool playerTurn(){
     bool endGame = false;
     for(int i = 0; endGame = false; i++){
+        if(i == 1){
 
+        } else if (i == 2){
+
+        } else if (i == 3){
+
+        } else {
+            playerTurn();//recursive call to repeat this function
+        }
     }
     return true;
 }
@@ -51,8 +59,7 @@ int main(){
     addPlayers(players);//game starts out by getting players' names
     while(gameOver == false){
         gameOver = playerTurn();
-        //add for loop into Play::playGame and send vector reference as a parameter
-    }//add if loop in for loop so it can determine who's turn it is
+    }
 
     cout << "\nGame over! Congrats Player " << "on your win!"; //need to figure out how to determine which player is the winner; maybe make another variable in Player class?
 
