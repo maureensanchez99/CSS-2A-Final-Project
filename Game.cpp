@@ -4,6 +4,14 @@
 #include <iostream>
 using namespace std;
 
+Game::Game(){
+    correctPhrase = "";
+    letterGuess = ' ';
+    guessPhrase = "";
+    playerOption = 0;
+    score = 0;
+}
+
 std::string Game::getPhrase(){ //gets the phrase the players are guessing from the Phrase class
     return correctPhrase;
 }

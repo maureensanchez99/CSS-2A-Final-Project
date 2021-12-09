@@ -13,6 +13,7 @@ protected:
     int score;
 
 public:
+    Game();
     std::string getPhrase(); //gets the phrase the players are guessing from the Phrase class
     void displayPhrase(); //displays phrase in progress for players
     void turnOption();// player chooses how they move onto their next move if their first move of guessing a letter is correct
