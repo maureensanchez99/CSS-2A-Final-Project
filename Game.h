@@ -17,7 +17,6 @@ public:
     std::string getPhrase(); //gets the phrase the players are guessing from the Phrase class
     void displayPhrase(); //displays phrase in progress for players
     void turnOption();// player chooses how they move onto their next move if their first move of guessing a letter is correct
-    void updateScore(); //updates player's score after their turn
     bool checkPhrase(std::string guessPhrase);//checks if player's guess is correct or not
 };
 

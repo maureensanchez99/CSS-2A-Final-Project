@@ -26,10 +26,6 @@ void Game::turnOption(){
 
 }
 
-void Game::updateScore(){
-
-}
-
 bool Game::checkPhrase(std::string guessPhrase){
     for(int i = 0; i < correctPhrase.size(); i++){
         char phraseLetter = correctPhrase[i];
