@@ -35,10 +35,10 @@ void addPlayers(vector<Player> &players){//adds players to vector to hold each p
 bool playerTurn(vector<Player> &players){
     bool endGame = false;
     for(int i = 0; endGame = false; i++){
-        Player whoseTurn = players[i]; //puts object from object into single variable to be referenced into another class
+        Player whoseTurn = players[i];//puts object from object into single variable to be referenced into another class
         Play object;
         if(i == 1){
-            endGame = object.playGame(whoseTurn);
+            endGame = object.playGame(whoseTurn); //calls function in Play class
         } else if (i == 2){
             endGame = object.playGame(whoseTurn);
         } else if (i == 3){

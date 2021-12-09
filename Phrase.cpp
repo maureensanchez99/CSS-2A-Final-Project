@@ -3,10 +3,12 @@
 #include "Phrase.h"
 #include "Game.h"
 
-void Phrase::setCategory()
-{
-std::string category[] = {"Programming", "Popular Anime", "Salinas School", "Computer Science Pioneers", "Local Attractions"};
+Phrase::Phrase(){
+
 }
+
+//{"Programming", "Popular Anime", "Salinas School", "Computer Science Pioneers", "Local Attractions"};
+
 
 std::string Phrase::getCategory() const{
     int size;
@@ -24,27 +26,17 @@ std::string phrase3[] = {"ada lovelace"};
 std::string phrase4[] = {"monterey bay aquarium"};
 }
 
-std::string getPhrase() const
-{
-if(category[] == [0])
-{
-    return phrase0[];
-}
-else if(category[] == [1])
-{
-    return phrase1[];
-}
-else if(category[] == [2])
-{
-    return phrase2[];
-}
-else if(category[] == [3])
-{
-    return phrase3[];
-}
-else(category[] == [4])
-{
-    return phrase4[];
-}
+std::string getPhrase() const{
+    if(category[] == [0]){
+        return phrase0[];
+    } else if(category[] == [1]){
+        return phrase1[];
+    } else if(category[] == [2]){
+        return phrase2[];
+    } else if(category[] == [3]){
+        return phrase3[];
+    } else(category[] == [4]){
+        return phrase4[];
+    }
 }
 
