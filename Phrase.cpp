@@ -2,16 +2,18 @@
 #include <string>
 #include "Phrase.h"
 #include "Game.h"
+
 void Phrase::setCategory()
 {
 std::string category[] = {"Programming", "Popular Anime", "Salinas School", "Computer Science Pioneers", "Local Attractions"};
 }
 
 std::string Phrase::getCategory() const{
-int size;
-for(int i = 0; i < size; i++)
-{
-    return category[i];
+    int size;
+    for(int i = 0; i < size; i++)
+    {
+        return category[i];
+    }
 }
 
 void Phrase::setPhrase(){
@@ -46,5 +48,3 @@ else(category[] == [4])
 }
 }
 
-}
-}
