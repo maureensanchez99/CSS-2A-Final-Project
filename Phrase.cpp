@@ -2,41 +2,34 @@
 #include <string>
 #include "Phrase.h"
 #include "Game.h"
+#include <ctime>
+#include <cstdlib>
 
 Phrase::Phrase(){
+    category[0] = "Programming";
+    category[1] = "Popular Anime";
+    category[2] = "Salinas School";
+    category[3] = "Computer Science Pioneers";
+    category[4] = "Local Attractions";
 
+    phrase[0] = "object oriented programming";
+    phrase[1] = "demon slayer";
+    phrase[2] = "hartnell community college";
+    phrase[3] = "ada lovelace";
+    phrase[4] = "monterey bay aquarium";
 }
 
-//{"Programming", "Popular Anime", "Salinas School", "Computer Science Pioneers", "Local Attractions"};
-
+void Phrase::chooseNum(){
+    int randNum = rand() % 5;
+    chosenCategory = category[randNum];
+    chosenPhrase = phrase[randNum];
+}
 
 std::string Phrase::getCategory() const{
-    int size;
-    for(int i = 0; i < size; i++)
-    {
-        return category[i];
-    }
+    return chosenCategory;
 }
 
-void Phrase::setPhrase(){
-std::string phrase0[] = {"object oriented programming"};
-std::string phrase1[] = {"demon slayer"};
-std::string phrase2[] = {"hartnell community college"};
-std::string phrase3[] = {"ada lovelace"};
-std::string phrase4[] = {"monterey bay aquarium"};
-}
-
-std::string getPhrase() const{
-    if(category[] == [0]){
-        return phrase0[];
-    } else if(category[] == [1]){
-        return phrase1[];
-    } else if(category[] == [2]){
-        return phrase2[];
-    } else if(category[] == [3]){
-        return phrase3[];
-    } else(category[] == [4]){
-        return phrase4[];
-    }
+std::string Phrase::getPhrase() const{
+    return chosenPhrase;
 }
 
