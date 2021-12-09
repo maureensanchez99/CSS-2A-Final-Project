@@ -21,10 +21,6 @@ void addPlayers(vector<Player> &players){//adds players to vector to hold each p
             cin >> userName;
             players[i].setName(userName);
         }
-    } else if(playerNumber == 1) {
-        cout << "What is the name of the Player: ";
-        cin >> userName;
-        players[0].setName(userName);
     } else {
         cout << "Game cannot play if more than 4 players. Try again" << endl << endl;
         addPlayers(players);
@@ -34,20 +30,31 @@ void addPlayers(vector<Player> &players){//adds players to vector to hold each p
 
 bool playerTurn(vector<Player> &players){
     bool endGame = false;
-    for(int i = 0; endGame = false; i++){
+    for(int i = 0; (endGame = false); i++){
         Player whoseTurn = players[i];//puts object from object into single variable to be referenced into another class
         Play object;
         if(i == 1){
-            endGame = object.playGame(whoseTurn); //calls function in Play class
+            endGame = object.playGame(&whoseTurn); //calls function in Play class
         } else if (i == 2){
-            endGame = object.playGame(whoseTurn);
+            endGame = object.playGame(&whoseTurn);
         } else if (i == 3){
-            endGame = object.playGame(whoseTurn);
+            endGame = object.playGame(&whoseTurn);
         } else {
             playerTurn(players);//recursive call to repeat this function
         }
     }
     return true;
+}
+
+bool playAnotherRound(){
+    string continueGame = "";
+    cout << "Do you want to play another game? (y or n) ";
+    cin >> continueGame;
+    if(continueGame == "y"){
+        return false;
+    } else {
+        return true;
+    }
 }
 
 void winner(vector<Player> &players){
@@ -66,13 +73,15 @@ int main(){
     bool gameOver = false, playAgain = false;
 
     cout << "Welcome to Wheel of Fortune!" << endl << endl;
-    cout << "Play alone or with others to figure out what is the\nhidden phrase with only knowing how many words and\nletters there should be along with a category hint relating to the phrase."
+    cout << "Play with others to figure out what is the hidden phrase \nwith only knowing how many words and letters there \nshould be along with a category hint relating to the phrase."
         << endl << endl;
     do{//game keeps repeating until players choose to play game again
         addPlayers(players);//game starts out by getting players' names
         while(gameOver == false){
             gameOver = playerTurn(players);
         }
+        playAgain = playAnotherRound();
+
     } while(playAgain == false);
 
     return 0;
