@@ -24,6 +24,14 @@ bool Play::guessLetter(){
     checkGuess = checkLetter(Game::letterGuess);
     if(checkGuess == false){
         cout << "That letter is not in the phrase. Your turn is over" << endl;
+    } else {
+        cout << "Would you like to guess another letter (1) or try to guess the phrase (2)? ";
+        cin >> playerOption;
+        if(playerOption == 1){
+            checkGuess = guessLetter();
+        } else {
+            checkGuess = guessPhrase();
+        }
     }
     return continueTurn;
 }

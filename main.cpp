@@ -63,15 +63,17 @@ void winner(vector<Player> &players){
 int main(){
     vector<Player> players(4);//holds all player info in vector as objects
     Play gameStart;
-    bool gameOver = false;
+    bool gameOver = false, playAgain = false;
 
     cout << "Welcome to Wheel of Fortune!" << endl << endl;
-    cout << "Play alone or with others to figure out what is the\nhidden phrase with only knowing how many words and\nletters there should be and a category hint relating to the phrase."
+    cout << "Play alone or with others to figure out what is the\nhidden phrase with only knowing how many words and\nletters there should be along with a category hint relating to the phrase."
         << endl << endl;
-    addPlayers(players);//game starts out by getting players' names
-    while(gameOver == false){
-        gameOver = playerTurn(players);
-    }
+    do{//game keeps repeating until players choose to play game again
+        addPlayers(players);//game starts out by getting players' names
+        while(gameOver == false){
+            gameOver = playerTurn(players);
+        }
+    } while(playAgain == false);
 
     return 0;
 }
