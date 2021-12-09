@@ -1,6 +1,9 @@
-#ifndef PHRASE_H_INCLUDED
-#define PHRASE_H_INCLUDED
+#ifndef Phrase_h
+#define Phrase_h
+#include <iostream>
 
+protected:
 
+public:
 
-#endif // PHRASE_H_INCLUDED
+#endif /*Phrase_h*/
