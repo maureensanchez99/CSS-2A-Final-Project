@@ -22,7 +22,6 @@ public:
   bool getGameWinner() const;
   void addToTotalScore(int score_);
   void displayAddedScores();
-
 };
 
 #endif // PLAYER_H_INCLUDED
