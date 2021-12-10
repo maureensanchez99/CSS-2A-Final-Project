@@ -29,13 +29,7 @@ bool Play::guessLetter(Game *object){
     if(checkGuess == false){
         cout << "That letter is not in the phrase. Your turn is over\n" << endl;
     } else {
-        cout << "Would you like to guess another letter (1) or try to guess the phrase (2)? ";
-        cin >> playerOption;
-        if(playerOption == 1){
-            checkGuess = guessLetter(object);
-        } else {
-            checkGuess = guessPhrase(object);
-        }
+        checkGuess = turnOption(object);
     }
     return continueTurn;
 }
@@ -49,13 +43,30 @@ bool Play::guessPhrase(Game *object){
 
 bool Play::checkLetter(char letterGuess, Game *object){
     string phrase = object -> getPhrase();
+    int letterShows = 0;
 
     for(int i = 0; i < phrase.size(); i++){
         char phraseLetter = phrase[i];
         if(phraseLetter == letterGuess){
-            cout << "That's correct!" << endl;
-            return true;
+            letterShows++;
         }
     }
+
+    if(letterShows > 0){
+        cout << "That's correct! That letter shows up " << letterShows << " time(s).\n";
+        return true;
+    }
+
     return false;
+}
+
+bool Play::turnOption(Game *object){
+    bool checkGuess = checkLetter(Game::letterGuess, object);
+    cout << "Would you like to guess another letter (1) or try to guess the phrase (2)? ";
+    cin >> playerOption;
+    if(playerOption == 1){
+        checkGuess = guessLetter(object);
+    } else {
+        checkGuess = guessPhrase(object);
+    }
 }

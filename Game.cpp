@@ -19,10 +19,6 @@ std::string Game::getPhrase() const{ //gets the phrase the players are guessing 
     return chosenPhrase;
 }
 
-void Game::turnOption(){
-
-}
-
 bool Game::checkPhrase(std::string guessPhrase, Game *object){
     for(int i = 0; i < correctPhrase.size(); i++){
         char phraseLetter = correctPhrase[i];
@@ -55,3 +51,5 @@ void Game::hiddenOut(){
 
     cout << "Your hidden phrase: " << hidden << endl;
 }
+
+

@@ -29,18 +29,18 @@ void addPlayers(vector<Player> &players){//adds players to vector to hold each p
 }
 
 bool playerTurn(vector<Player> &players){
-    bool endGame = false;
     for(int i = 0; i < players.size(); i++){
         Player whoseTurn = players[i];//puts object from object into single variable to be referenced into another class
         Play object;
+        Game phrase;
         if(i == 0){
-            endGame = object.playGame(&whoseTurn); //calls function in Play class
+            object.playGame(&whoseTurn); //calls function in Play class
         } else if (i == 1){
-            endGame = object.playGame(&whoseTurn);
+            object.playGame(&whoseTurn);
         } else if (i == 2){
-            endGame = object.playGame(&whoseTurn);
+            object.playGame(&whoseTurn);
         } else if (i == 3){
-            endGame = object.playGame(&whoseTurn);
+            object.playGame(&whoseTurn);
         } else {
             playerTurn(players);//recursive call to repeat this function
         }

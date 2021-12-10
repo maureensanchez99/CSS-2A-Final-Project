@@ -18,6 +18,7 @@ public:
     bool guessLetter(Game *object);//player guesses a letter
     bool guessPhrase(Game *object);//player guesses the phrase
     bool checkLetter(char guessLetter, Game *object);//checks if player's guess is correct or not
+    bool turnOption(Game *object);//player decides what they want to do if their answer is correct
 };
 
 #endif // PLAY_H_INCLUDED
