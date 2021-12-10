@@ -19,18 +19,19 @@ void addPlayers(vector<Player> &players){//adds players to vector to hold each p
         for(int i = 0; i < playerNumber; i++){
             cout << "What is the name of Player " << i+1 << ": ";
             cin >> userName;
-            players[i].setName(userName);
+            players.push_back(userName);
+            //players[i].setName(userName);
         }
     } else {
-        cout << "Game cannot play if more than 4 players. Try again" << endl << endl;
-        addPlayers(players);
+        cout << "Game cannot be played if playing alone or with more than 4 players. Try again" << endl << endl;
+        addPlayers(players); //calls function again to add players
     }
-
 }
 
 bool playerTurn(vector<Player> &players){
     bool endGame = false;
     for(int i = 0; (endGame = false); i++){
+        cout << "here" << endl;
         Player whoseTurn = players[i];//puts object from object into single variable to be referenced into another class
         Play object;
         if(i == 1){
@@ -68,20 +69,23 @@ void winner(vector<Player> &players){
 }
 
 int main(){
-    vector<Player> players(4);//holds all player info in vector as objects
+    vector<Player> players;//holds all player info in vector as objects
     Play gameStart;
     bool gameOver = false, playAgain = false;
 
     cout << "Welcome to Wheel of Fortune!" << endl << endl;
     cout << "Play with others to figure out what is the hidden phrase \nwith only knowing how many words and letters there \nshould be along with a category hint relating to the phrase."
         << endl << endl;
+
     do{//game keeps repeating until players choose to play game again
         addPlayers(players);//game starts out by getting players' names
-        while(gameOver == false){
-            gameOver = playerTurn(players);
-        }
-        playAgain = playAnotherRound();
 
+        while(gameOver == false){
+            //gameOver = playerTurn(players);
+            //cout << "here" << endl;
+        }
+
+        playAgain = playAnotherRound();
     } while(playAgain == false);
 
     return 0;

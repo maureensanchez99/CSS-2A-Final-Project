@@ -11,7 +11,7 @@ Play::Play(){
 
 bool Play::playGame(Player *player){
     Game::displayPhrase();
-    cout << "It is Player " /*object.getName()*/ << "'s turn" << endl;
+    //cout << "It is Player " << player.getName() << "'s turn" << endl;
     guessLetter();
 
     return true;//ends turn for player
