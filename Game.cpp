@@ -44,3 +44,11 @@ void Game::setPhrase(std::string chosenPhrase_){
 std::string Game::getCategory() const{
     return chosenCategory;
 }
+void hiddenOut(string phrase_){
+ string hidden = phrase_;   
+ string guess;
+    
+ replace_if ( hidden.begin(), hidden.end(), [] (char c) { return isalpha(c) }, '-' );
+    
+ cout << "Your hidden phrase: " << phrase << endl << endl;
+}
