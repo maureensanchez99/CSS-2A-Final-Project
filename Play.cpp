@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
 #include "Play.h"
-#include "Player.h"
+//#include "Player.h"
+#include "Phrase.h"
 using namespace std;
 
 Play::Play(){
@@ -10,8 +11,11 @@ Play::Play(){
 }
 
 bool Play::playGame(Player *player){
-    Game::displayPhrase();
+    Phrase object;
+    object.displayPhrase();
+
     //cout << "It is Player " << player.getName() << "'s turn" << endl;
+
     guessLetter();
 
     return true;//ends turn for player
