@@ -28,21 +28,21 @@ void addPlayers(vector<Player> &players){//adds players to vector to hold each p
     }
 }
 
-bool playerTurn(vector<Player> &players){
+bool playerTurn(vector<Player> &players, Game &phrase){
     for(int i = 0; i < players.size(); i++){
         Player whoseTurn = players[i];//puts object from object into single variable to be referenced into another class
         Play object;
-        Game phrase;
+
         if(i == 0){
-            object.playGame(&whoseTurn); //calls function in Play class
+            object.playGame(&whoseTurn, &phrase); //calls function in Play class
         } else if (i == 1){
-            object.playGame(&whoseTurn);
+            object.playGame(&whoseTurn, &phrase);
         } else if (i == 2){
-            object.playGame(&whoseTurn);
+            object.playGame(&whoseTurn, &phrase);
         } else if (i == 3){
-            object.playGame(&whoseTurn);
+            object.playGame(&whoseTurn, &phrase);
         } else {
-            playerTurn(players);//recursive call to repeat this function
+            playerTurn(players, phrase);//recursive call to repeat this function
         }
     }
     return true;
@@ -72,6 +72,7 @@ void winner(vector<Player> &players){
 int main(){
     vector<Player> players;//holds all player info in vector as objects
     Play gameStart;
+    Game phrase;
     bool gameOver = false, playAgain = false;
 
     cout << "Welcome to Wheel of Fortune!" << endl << endl;
@@ -82,7 +83,7 @@ int main(){
         addPlayers(players);//game starts out by getting players' names
 
         while(gameOver == false){
-            gameOver = playerTurn(players);
+            gameOver = playerTurn(players, phrase);
         }
 
         playAgain = playAnotherRound();

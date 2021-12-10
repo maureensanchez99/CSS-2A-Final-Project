@@ -10,13 +10,12 @@ Play::Play(){
     playerOption = 0;
 }
 
-bool Play::playGame(Player *player){
-    Game object;
+bool Play::playGame(Player *player, Game *object){
     Phrase correctAnswer;
 
     cout << endl << "It is Player " << player -> getName() << "'s turn" << endl;
-    correctAnswer.displayPhrase(&object);
-    guessLetter(&object);
+    correctAnswer.displayPhrase(object);
+    guessLetter(object);
 
     return true;//ends turn for player
 }

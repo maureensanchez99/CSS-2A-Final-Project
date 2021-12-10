@@ -14,7 +14,7 @@ private:
 
 public:
     Play();//constructor
-    bool playGame(Player *player);//begins round for player
+    bool playGame(Player *player, Game *object);//begins round for player
     bool guessLetter(Game *object);//player guesses a letter
     bool guessPhrase(Game *object);//player guesses the phrase
     bool checkLetter(char guessLetter, Game *object);//checks if player's guess is correct or not
