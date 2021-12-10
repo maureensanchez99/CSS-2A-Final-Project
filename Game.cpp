@@ -10,10 +10,12 @@ Game::Game(){
     guessPhrase = "";
     playerOption = 0;
     score = 0;
+    chosenCategory = "";
+    chosenPhrase = "";
 }
 
-std::string Game::getPhrase(){ //gets the phrase the players are guessing from the Phrase class
-    return correctPhrase;
+std::string Game::getPhrase() const{ //gets the phrase the players are guessing from the Phrase class
+    return chosenPhrase;
 }
 
 
@@ -29,4 +31,16 @@ bool Game::checkPhrase(std::string guessPhrase){
         }
     }
     return false;
+}
+
+void Game::setCategory(std::string chosenCategory_){
+    chosenCategory = chosenCategory_;
+}
+
+void Game::setPhrase(std::string chosenPhrase_){
+    chosenPhrase = chosenPhrase_;
+}
+
+std::string Game::getCategory() const{
+    return chosenCategory;
 }

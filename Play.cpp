@@ -11,11 +11,11 @@ Play::Play(){
 }
 
 bool Play::playGame(Player *player){
-    Phrase object;
-    object.displayPhrase();
+    Game object;
+    Phrase correctAnswer;
 
-    //cout << "It is Player " << player.getName() << "'s turn" << endl;
-
+    cout << endl << "It is Player " << player -> getName() << "'s turn" << endl;
+    correctAnswer.displayPhrase(&object);
     guessLetter();
 
     return true;//ends turn for player
@@ -23,11 +23,11 @@ bool Play::playGame(Player *player){
 
 bool Play::guessLetter(){
     bool checkGuess = false, continueTurn = false;
-    cout << "Guess a letter that you think is part of the phrase: ";
+    cout << "Guess a letter that you think is part of the phrase above: ";
     cin >> Game::letterGuess;
     checkGuess = checkLetter(Game::letterGuess);
     if(checkGuess == false){
-        cout << "That letter is not in the phrase. Your turn is over" << endl;
+        cout << "That letter is not in the phrase. Your turn is over\n" << endl;
     } else {
         cout << "Would you like to guess another letter (1) or try to guess the phrase (2)? ";
         cin >> playerOption;
@@ -48,13 +48,14 @@ bool Play::guessPhrase(){
 }
 
 bool Play::checkLetter(char letterGuess){
-    string phrase = Game::getPhrase();
-    for(int i = 0; i < Game::correctPhrase.size(); i++){
-        char phraseLetter = correctPhrase[i];
-        if(letterGuess == phraseLetter){
+    /**string phrase = object.getPhrase();
+
+    for(int i = 0; i < phrase.size(); i++){
+        char phraseLetter = phrase[i];
+        if(phraseLetter == letterGuess){
             cout << "That's correct!";
             return true;
         }
-    }
+    }**/
     return false;
 }

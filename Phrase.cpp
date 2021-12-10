@@ -8,9 +8,6 @@
 using namespace std;
 
 Phrase::Phrase(){
-    chosenCategory = "";
-    chosenPhrase = "";
-
     category[0] = "Programming";
     category[1] = "Popular Anime";
     category[2] = "Salinas School";
@@ -24,12 +21,14 @@ Phrase::Phrase(){
     phrase[4] = "monterey bay aquarium";
 }
 
-void Phrase::chooseNum(){
+void Phrase::chooseNum(Game *object){
     int randNum = rand() % 5;
+
     std::string chosenCategory = getCategory(randNum);
-    setCategory(chosenCategory);
+    object -> setCategory(chosenCategory);
+
     std::string chosenPhrase = getPhrase(randNum);
-    setPhrase(chosenPhrase);
+    object -> setPhrase(chosenPhrase);
 }
 
 std::string Phrase::getCategory(int num){
@@ -42,18 +41,17 @@ std::string Phrase::getPhrase(int num){
     return chosen;
 }
 
-void Phrase::setCategory(std::string chosenCategory_){
-    chosenCategory = chosenCategory_;
-}
+void Phrase::displayPhrase(Game *object){
+    chooseNum(object);
+    cout << endl;
 
-void Phrase::setPhrase(std::string chosenPhrase_){
-    chosenPhrase = chosenPhrase_;
-}
-
-void Phrase::displayPhrase(){
-    chooseNum();
-    for(int i = 0; i < chosenPhrase.size(); i++){
-        cout << chosenPhrase[i] << " ";
+    string phrase = object -> getPhrase();
+    cout << "Phrase: " << phrase << endl;
+    for(int i = 0; i < phrase.size(); i++){
+        cout << phrase[i] << " ";
     }
+
+    cout << "\nCategory hint: " << object -> getCategory();
+    cout << endl << endl;
 }
 
