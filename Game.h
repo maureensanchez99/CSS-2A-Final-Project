@@ -21,6 +21,7 @@ public:
     bool checkPhrase(std::string guessPhrase);//checks if player's guess is correct or not
     void setCategory(std::string chosenCategory_);
     void setPhrase(std::string chosenPhrase_);
+    void hiddenOut();
     std::string getCategory() const;
 };
 
