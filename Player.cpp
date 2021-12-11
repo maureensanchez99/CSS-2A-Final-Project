@@ -48,5 +48,5 @@ void Player::displayAddedScores()
   {
     playerScore += totalScore[i];
   }
-  cout << name << " currently has $" << playerScore << ".\n";
+  cout << name << " has " << playerScore << " points.\n";
 }
