@@ -40,14 +40,7 @@ bool Player::getGameWinner() const{
 void Player::addToTotalScore(int score_){
   totalScore.push_back(score_);
 }
-/*
-void Player::displayAddedScores(){
-  int playerScore = 0;
-  for (int i = 0; i < totalScore.size(); i++){
-    playerScore += totalScore[i];
-  }
-  cout << name << " currently has " << playerScore << " points.\n";
-}*/
+
 void Player::displayAddedScores()
 {
   int playerScore = 0;
