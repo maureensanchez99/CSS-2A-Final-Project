@@ -5,11 +5,11 @@ using namespace std;
 class Wheel 
 {
 private:
- string scores[25];
+  int scores[25];
 
 public:
   Wheel(); // the scores are set in the array, they can't be altered
-  string getRandomScore();// returns a random score
+  int getRandomScore();// returns a random score
   void displayScores(); // displays all the possibe scores
 
 };
