@@ -20,10 +20,10 @@ public:
     bool checkPhrase(std::string guessPhrase, Game *object);//checks if player's guess is correct or not
     void setCategory(std::string chosenCategory_);
     void setPhrase(std::string chosenPhrase_);
-    void hiddenOut(); //hides letters of phrase and only shows amount of letters and words in phrase
+    //void hiddenOut(); //hides letters of phrase and only shows amount of letters and words in phrase
     std::string getCategory() const;
-	
-    bool hiddenOut(char guess_, Game *object);
+
+    bool hiddenOut(Game *object);
 };
 
 #endif // GAME_H_INCLUDED

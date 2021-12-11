@@ -46,7 +46,7 @@ void Phrase::displayPhrase(Game *object){
     cout << endl;
 
     string phrase = object -> getPhrase();
-    object -> hiddenOut();
+    object -> hiddenOut(object);
 
     cout << "\nCategory hint: " << object -> getCategory();
     cout << endl << endl;

@@ -45,30 +45,30 @@ std::string Game::getCategory() const{
     return chosenCategory;
 }
 
-void Game::hiddenOut(){
+/**void Game::hiddenOut(){
     string hidden = getPhrase();
     //string guess;
 
     replace_if ( hidden.begin(), hidden.end(), [] (char c) { return isalpha(c); }, '-' );
 
     cout << "Your hidden phrase: " << hidden << endl;
-}
+}**/
 
 
-bool Game::hiddenOut(char guess_, Game *object){
+bool Game::hiddenOut(Game *object){
     string phrase = object -> getPhrase();
     int letterShows = 0;
 
     for (int i = 0; i < phrase.size(); i++){
         char phraseLetter = phrase[i];
         if(phraseLetter == letterGuess){
-            soFar[i] = guess;
+            //soFar[i] = guess;
         }
     }
 
-     if(letterShows > 0 ){
-        cout << "This letter is in the phrase: " << guess <<"." << endl;
+    if(letterShows > 0 ){
+        cout << "This letter is in the phrase: " /**guess**/ <<"." << endl;
         return true;
-}
+    }
 }
 
