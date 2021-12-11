@@ -24,6 +24,7 @@ public:
     std::string getCategory() const;
 
     bool hiddenOut(Game *object);
+    void PrintsoFar (string phrase_);
 };
 
 #endif // GAME_H_INCLUDED
