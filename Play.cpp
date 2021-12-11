@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include "Play.h"
-//#include "Player.h"
 #include "Phrase.h"
 using namespace std;
 
@@ -10,18 +9,24 @@ Play::Play(){
     playerOption = 0;
 }
 
-bool Play::playGame(Player *player, Game *object){
+void Play::playGame(Player *player, Game *object){
     Phrase correctAnswer;
+    bool continueTurn = false;
 
     cout << endl << "It is Player " << player -> getName() << "'s turn" << endl;
-    correctAnswer.displayPhrase(object);
-    guessLetter(object);
+    correctAnswer.displayPhrase(object); //displays phrase with hidden letters
+    continueTurn = guessLetter(object); //starts turn for player
 
-    return true;//ends turn for player
+    if(continueTurn == true){
+        exit; //ends turn for player
+    } else {
+        playGame(player, object);
+    }
 }
 
 bool Play::guessLetter(Game *object){
-    bool checkGuess = false, continueTurn = false;
+    bool checkGuess = false;
+
     cout << "Guess a letter that you think is part of the phrase above: ";
     cin >> Game::letterGuess;
     checkGuess = checkLetter(Game::letterGuess, object);
@@ -30,13 +35,13 @@ bool Play::guessLetter(Game *object){
     } else {
         checkGuess = turnOption(object);
     }
-    return continueTurn;
+    return checkGuess;
 }
 
 bool Play::guessPhrase(Game *object){
     cout << "Guess the phrase: ";
     cin >> guess;
-    bool isCorrect = Game::checkPhrase(guess, object);
+    bool isCorrect = Game::checkPhrase(guess, object); //send player's guess and hidden phrase to be compared
     return isCorrect;
 }
 
@@ -60,7 +65,7 @@ bool Play::checkLetter(char letterGuess, Game *object){
 }
 
 bool Play::turnOption(Game *object){
-    bool checkGuess = checkLetter(Game::letterGuess, object);
+    bool checkGuess = false;
     cout << "Would you like to guess another letter (1) or try to guess the phrase (2)? ";
     cin >> playerOption;
     if(playerOption == 1){
@@ -68,4 +73,5 @@ bool Play::turnOption(Game *object){
     } else {
         checkGuess = guessPhrase(object);
     }
+    return checkGuess;
 }

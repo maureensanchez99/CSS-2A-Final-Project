@@ -20,15 +20,18 @@ std::string Game::getPhrase() const{ //gets the phrase the players are guessing 
 }
 
 bool Game::checkPhrase(std::string guessPhrase, Game *object){
-    for(int i = 0; i < correctPhrase.size(); i++){
-        char phraseLetter = correctPhrase[i];
+    string phrase = object -> getPhrase();
+    for(int i = 0; i < phrase.size(); i++){
+        char phraseLetter = phrase[i];
         for(int i = 0; i < guessPhrase.size(); i++){
-            if(phraseLetter == guessPhrase[i]){
-                cout << "true" << endl;
+            char guessLetter = guessPhrase[i];
+            if(phraseLetter != guessLetter){
+                return false;
             }
         }
     }
-    return false;
+    cout << "here" << endl;
+    return true;
 }
 
 void Game::setCategory(std::string chosenCategory_){
