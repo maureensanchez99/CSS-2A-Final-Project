@@ -55,3 +55,20 @@ void Game::hiddenOut(){
 }
 
 
+bool Game::hiddenOut(char guess_, Game *object){
+    string phrase = object -> getPhrase();
+    int letterShows = 0;
+
+    for (int i = 0; i < phrase.size(); i++){
+        char phraseLetter = phrase[i];
+        if(phraseLetter == letterGuess){
+            soFar[i] = guess;
+        }
+    }
+
+     if(letterShows > 0 ){
+        cout << "This letter is in the phrase: " << guess <<"." << endl;
+        return true;
+}
+}
+
