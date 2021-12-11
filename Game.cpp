@@ -45,43 +45,14 @@ std::string Game::getCategory() const{
     return chosenCategory;
 }
 
-/**void Game::hiddenOut(){
-    string hidden = getPhrase();
-    //string guess;
 
-    replace_if ( hidden.begin(), hidden.end(), [] (char c) { return isalpha(c); }, '-' );
+void Game::printsoFar(Game *object, string guessPhrase_){
+    string soFar = object -> getPhrase();
+    soFar = string(soFar.size(), '-');
 
-    cout << "Your hidden phrase: " << hidden << endl;
-}**/
-
-
-bool Game::hiddenOut(Game *object){
-    string phrase = object -> getPhrase();
-    int letterShows = 0;
-
-    for (int i = 0; i < phrase.size(); i++){
-        char phraseLetter = phrase[i];
-        if(phraseLetter == letterGuess){
-            //soFar[i] = guess;
-        }
-    }
-
-    if(letterShows > 0 ){
-        cout << "This letter is in the phrase: " /**guess**/ <<"." << endl;
-        return true;
-    }
-}
-
-
-
-    void Game::PrintsoFar (string phrase_){
-        
-    string soFar;
-    soFar = string (phrase.size(), '-');
-    
-    if(soFar != phrase){
+    if(soFar != guessPhrase_){
            cout << "\nSo far, the word is: " << soFar << endl;
            }else{
-           cout << "The hidden word was : " << phrase;
+           cout << "The hidden word was : " << guessPhrase_;
            }
     }

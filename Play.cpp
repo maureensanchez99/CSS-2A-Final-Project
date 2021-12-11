@@ -17,10 +17,10 @@ void Play::playGame(Player *player, Game *object){
     correctAnswer.displayPhrase(object); //displays phrase with hidden letters
     continueTurn = guessLetter(object); //starts turn for player
 
-    if(continueTurn == true){
-        exit; //ends turn for player
-    } else {
+    if(continueTurn == false){
         playGame(player, object);
+    } else {
+        //ends turn for player
     }
 }
 

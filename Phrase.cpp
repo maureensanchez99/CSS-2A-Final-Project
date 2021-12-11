@@ -43,10 +43,10 @@ std::string Phrase::getPhrase(int num){
 
 void Phrase::displayPhrase(Game *object){
     chooseNum(object);
-    cout << endl;
+    string guessPhrase;
 
     string phrase = object -> getPhrase();
-    object -> hiddenOut(object);
+    object -> printsoFar(object, guessPhrase);
 
     cout << "\nCategory hint: " << object -> getCategory();
     cout << endl << endl;
