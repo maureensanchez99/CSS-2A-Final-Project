@@ -22,6 +22,8 @@ public:
     void setPhrase(std::string chosenPhrase_);
     void hiddenOut(); //hides letters of phrase and only shows amount of letters and words in phrase
     std::string getCategory() const;
+	
+    bool hiddenOut(char guess_, Game *object);
 };
 
 #endif // GAME_H_INCLUDED
