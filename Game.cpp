@@ -72,3 +72,16 @@ bool Game::hiddenOut(Game *object){
     }
 }
 
+
+
+    void Game::PrintsoFar (string phrase_){
+        
+    string soFar;
+    soFar = string (phrase.size(), '-');
+    
+    if(soFar != phrase){
+           cout << "\nSo far, the word is: " << soFar << endl;
+           }else{
+           cout << "The hidden word was : " << phrase;
+           }
+    }
