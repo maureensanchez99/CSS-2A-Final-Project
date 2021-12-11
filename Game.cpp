@@ -30,7 +30,6 @@ bool Game::checkPhrase(std::string guessPhrase, Game *object){
             }
         }
     }
-    cout << "here" << endl;
     return true;
 }
 
