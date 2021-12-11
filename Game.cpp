@@ -16,7 +16,7 @@ Game::Game(){
 }
 
 std::string Game::getPhrase() const{ //gets the phrase the players are guessing from the Phrase class
-    return chosenPhrase;
+    return correctPhrase;
 }
 
 bool Game::checkPhrase(std::string guessPhrase, Game *object){
@@ -27,6 +27,8 @@ bool Game::checkPhrase(std::string guessPhrase, Game *object){
             char guessLetter = guessPhrase[i];
             if(phraseLetter != guessLetter){
                 return false;
+            } else {
+                cout << "\nThat is correct!" << endl;
             }
         }
     }
@@ -38,21 +40,21 @@ void Game::setCategory(std::string chosenCategory_){
 }
 
 void Game::setPhrase(std::string chosenPhrase_){
-    chosenPhrase = chosenPhrase_;
+    correctPhrase = chosenPhrase_;
 }
 
 std::string Game::getCategory() const{
     return chosenCategory;
 }
 
-
 void Game::printsoFar(Game *object, string guessPhrase_){
     string soFar = object -> getPhrase();
     soFar = string(soFar.size(), '-');
 
     if(soFar != guessPhrase_){
-           cout << "\nSo far, the word is: " << soFar << endl;
-           }else{
-           cout << "The hidden word was : " << guessPhrase_;
-           }
+        cout << "\nSo far, the phrase is: " << soFar << endl;
+    } else{
+        cout << "The hidden phrase is: " << guessPhrase_;
     }
+    chosenPhrase = soFar;
+}

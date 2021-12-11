@@ -10,23 +10,24 @@ Play::Play(){
 }
 
 void Play::playGame(Player *player, Game *object){
-    Phrase correctAnswer;
     bool continueTurn = false;
 
     cout << endl << "It is Player " << player -> getName() << "'s turn" << endl;
-    correctAnswer.displayPhrase(object); //displays phrase with hidden letters
     continueTurn = guessLetter(object); //starts turn for player
 
     if(continueTurn == false){
         playGame(player, object);
     } else {
-        //ends turn for player
+        cout << "Round ends\n";
+        return;
     }
 }
 
 bool Play::guessLetter(Game *object){
+    Phrase correctAnswer;
     bool checkGuess = false;
 
+    correctAnswer.displayPhrase(object); //displays phrase with hidden letters
     cout << "Guess a letter that you think is part of the phrase above: ";
     cin >> Game::letterGuess;
     checkGuess = checkLetter(Game::letterGuess, object);
@@ -42,6 +43,7 @@ bool Play::guessPhrase(Game *object){
     cout << "Guess the phrase: ";
     cin >> guess;
     bool isCorrect = Game::checkPhrase(guess, object); //send player's guess and hidden phrase to be compared
+
     return isCorrect;
 }
 

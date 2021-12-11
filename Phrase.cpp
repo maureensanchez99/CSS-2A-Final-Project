@@ -8,11 +8,11 @@
 using namespace std;
 
 Phrase::Phrase(){
-    category[0] = "Programming";
-    category[1] = "Popular Anime";
-    category[2] = "Salinas School";
-    category[3] = "Computer Science Pioneers";
-    category[4] = "Local Attractions";
+    category[0] = "Programming, (6, 8, 11)";
+    category[1] = "Popular Anime, (5, 6)";
+    category[2] = "Colleges in Salinas,CA, (8, 9, 7)";
+    category[3] = "Computer Science Pioneers, (3, 8)";
+    category[4] = "Local Attractions (8, 3, 8)";
 
     phrase[0] = "object oriented programming";
     phrase[1] = "demon slayer";
@@ -42,10 +42,13 @@ std::string Phrase::getPhrase(int num){
 }
 
 void Phrase::displayPhrase(Game *object){
-    chooseNum(object);
-    string guessPhrase;
+    string guessPhrase = object -> getPhrase();
+    char firstLetter = guessPhrase[0];
+    if(firstLetter = ' '){
+        chooseNum(object);
+    }
 
-    string phrase = object -> getPhrase();
+    //string phrase = object -> getPhrase();
     object -> printsoFar(object, guessPhrase);
 
     cout << "\nCategory hint: " << object -> getCategory();
