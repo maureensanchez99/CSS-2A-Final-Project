@@ -50,8 +50,9 @@ bool Play::guessLetter(Game *object){
     if(checkGuess == false){
         return checkGuess;
     } else {
-        return checkGuess = turnOption(object);
+        checkGuess = turnOption(object);
     }
+    return checkGuess;
 }
 
 bool Play::guessPhrase(Game *object){
