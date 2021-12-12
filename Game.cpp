@@ -40,10 +40,15 @@ void Game::setCategory(std::string chosenCategory_){
 
 void Game::setPhrase(std::string chosenPhrase_){
     correctPhrase = chosenPhrase_;
+    chosenPhrase = chosenPhrase_;
 }
 
 std::string Game::getCategory() const{
     return chosenCategory;
+}
+
+void Game::setLetterGuess(char letterGuess_){
+    letterGuess = letterGuess_;
 }
 
 void Game::printsoFar(Game *object, string guessPhrase_){
@@ -51,9 +56,16 @@ void Game::printsoFar(Game *object, string guessPhrase_){
     soFar = string(soFar.size(), '-');
 
     if(soFar != guessPhrase_){
-        cout << "\nSo far, the phrase is: " << soFar << endl;
+        cout << "\nSo far, the phrase is: ";
+        for(int i = 0; i < soFar.length(); i++){
+            if(soFar[i] == letterGuess){
+                soFar[i] = letterGuess;
+            }
+        }
+        cout << soFar << endl;
     } else{
         cout << "The hidden phrase is: " << guessPhrase_;
     }
+
     chosenPhrase = soFar;
 }

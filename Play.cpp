@@ -26,11 +26,15 @@ void Play::playGame(Player *player, Game *object){
 bool Play::guessLetter(Game *object){
     Phrase correctAnswer;
     bool checkGuess = false;
+    char guessedLetter = ' ';
 
     correctAnswer.displayPhrase(object); //displays phrase with hidden letters
     cout << "Guess a letter that you think is part of the phrase above: ";
-    cin >> Game::letterGuess;
-    checkGuess = checkLetter(Game::letterGuess, object);
+    cin >> guessedLetter;
+
+    object -> setLetterGuess(guessedLetter);
+    checkGuess = checkLetter(guessedLetter, object);
+
     if(checkGuess == false){
         return checkGuess;
     } else {
