@@ -44,10 +44,6 @@ bool playerTurn(vector<Player> &players, Game &phrase){
         } else {
             playerTurn(players, phrase);//recursive call to repeat this function
         }
-        string gamePhrase = phrase.getPhrase();
-        if(gamePhrase[0] = ' '){
-            playerTurn(players, phrase);
-        }
     }
     return true;
 }
@@ -80,8 +76,8 @@ int main(){
     bool gameOver = false, playAgain = false;
 
     cout << "Welcome to Wheel of Fortune!" << endl << endl;
-    cout << "Play with others to figure out what is the hidden phrase \nwith only knowing how many words and letters there \nshould be along with a category hint relating to the phrase."
-        << endl << endl << "Hint: the numbers that are with the category hint indicate how many words and letters are in the phrase. "<< endl << endl;
+    cout << "Play with others to figure out what are the hidden phrases \nwith only knowing how many words and letters there \nshould be along with a category hint relating to the phrase."
+        << endl << endl << "Hint: the numbers that are with the category hint indicate how many words and \nhow many letters in those words that make up the phrase. "<< endl << endl;
 
     do{//game keeps repeating until players choose to play game again
         addPlayers(players);//game starts out by getting players' names
