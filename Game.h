@@ -22,6 +22,7 @@ public:
     void setPhrase(std::string chosenPhrase_);
     std::string getCategory() const;
     void setLetterGuess(char letterGuess_);
+    char getLetterGuess();
     void setUpdatedPhrase(std::string chosenPhrase_);
     std::string getUpdatedPhrase() const;
 
