@@ -56,7 +56,11 @@ char Game::getLetterGuess(){
 }
 
 void Game::setUpdatedPhrase(std::string chosenPhrase_){
-    chosenPhrase = chosenPhrase_;
+    for(int i = 0; i < chosenPhrase_.length(); i++){
+            if(chosenPhrase_[i] == letterGuess){
+                chosenPhrase[i] = letterGuess;
+            }
+    }
 }
 
 std::string Game::getUpdatedPhrase() const{
@@ -64,20 +68,10 @@ std::string Game::getUpdatedPhrase() const{
 }
 
 void Game::printsoFar(Game *object, string guessPhrase_){
-    string soFar = object -> getPhrase();
-    soFar = string(soFar.size(), '-');
-
     if(soFar != guessPhrase_){
         cout << "\nSo far, the phrase is: ";
-        for(int i = 0; i < soFar.length(); i++){
-            if(soFar[i] == letterGuess){
-                chosenPhrase[i] = letterGuess;
-            }
-        }
-        cout << soFar << endl;
+        cout << chosenPhrase << endl;
     } else{
         cout << "The hidden phrase is: " << guessPhrase_;
     }
-
-    setUpdatedPhrase(chosenPhrase);
 }
