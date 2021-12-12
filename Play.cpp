@@ -32,17 +32,16 @@ bool Play::guessLetter(Game *object){
     cin >> Game::letterGuess;
     checkGuess = checkLetter(Game::letterGuess, object);
     if(checkGuess == false){
-        cout << "That letter is not in the phrase. Your turn is over\n" << endl;
+        return checkGuess;
     } else {
         checkGuess = turnOption(object);
     }
-    return checkGuess;
 }
 
 bool Play::guessPhrase(Game *object){
     cout << "Guess the phrase: ";
-    cin >> guess;
-    bool isCorrect = Game::checkPhrase(guess, object); //send player's guess and hidden phrase to be compared
+    cin >> Game::guessPhrase;
+    bool isCorrect = Game::checkPhrase(Game::guessPhrase, object); //send player's guess and hidden phrase to be compared
 
     return isCorrect;
 }

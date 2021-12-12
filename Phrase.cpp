@@ -43,12 +43,10 @@ std::string Phrase::getPhrase(int num){
 
 void Phrase::displayPhrase(Game *object){
     string guessPhrase = object -> getPhrase();
-    char firstLetter = guessPhrase[0];
-    if(firstLetter = ' '){
+    //if(){
         chooseNum(object);
-    }
+    //}
 
-    //string phrase = object -> getPhrase();
     object -> printsoFar(object, guessPhrase);
 
     cout << "\nCategory hint: " << object -> getCategory();

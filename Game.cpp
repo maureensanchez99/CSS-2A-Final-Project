@@ -27,11 +27,10 @@ bool Game::checkPhrase(std::string guessPhrase, Game *object){
             char guessLetter = guessPhrase[i];
             if(phraseLetter != guessLetter){
                 return false;
-            } else {
-                cout << "\nThat is correct!" << endl;
             }
         }
     }
+    cout << "\nThat is correct!" << endl;
     return true;
 }
 
