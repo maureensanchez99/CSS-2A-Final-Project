@@ -5,11 +5,13 @@ using namespace std;
 #include <string>
 
 class Player {
+protected:
+    bool gameWinner;//by end of game whoever has the most points, this variable for this player will be true
+
 private:
     string name;
     vector<int> totalScore;//holds players total score throughout the game
     char playerGuess;
-    bool gameWinner;//by end of game whoever has the most points, this variable for this player will be true
 
 public:
     Player();

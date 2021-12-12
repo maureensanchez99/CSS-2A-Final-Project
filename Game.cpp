@@ -56,19 +56,24 @@ char Game::getLetterGuess(){
 }
 
 void Game::setUpdatedPhrase(std::string chosenPhrase_){
-    for(int i = 0; i < chosenPhrase_.length(); i++){
-            if(chosenPhrase_[i] == letterGuess){
-                chosenPhrase[i] = letterGuess;
-            }
-    }
+
+    chosenPhrase = chosenPhrase_;
 }
 
 std::string Game::getUpdatedPhrase() const{
     return chosenPhrase;
 }
 
+void Game::updatePhrase(Game *object){
+    for(int i = 0; i < chosenPhrase.length(); i++){
+        if(correctPhrase[i] == letterGuess){
+            chosenPhrase[i] = letterGuess;
+        }
+    }
+}
+
 void Game::printsoFar(Game *object, string guessPhrase_){
-    if(soFar != guessPhrase_){
+    if(chosenPhrase != guessPhrase_){
         cout << "\nSo far, the phrase is: ";
         cout << chosenPhrase << endl;
     } else{

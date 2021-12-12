@@ -16,12 +16,12 @@ void Play::playGame(Player *player, Game *object){
     phrase.chooseNum(object);//creates the phrase that players have to guess
     string guessPhrase = object -> getPhrase();
     guessPhrase = string(guessPhrase.size(), '-');
+    object -> setUpdatedPhrase(guessPhrase);
 
+    cout << "\nThe phrase is: " << guessPhrase << endl;
 
-    cout << "The phrase is: " << guessPhrase << endl;
-
-    cout << "\nCategory hint: " << object -> getCategory();
-    cout << endl << endl;
+    cout << "Category hint: " << object -> getCategory();
+    cout << endl;
 
     cout << endl << "It is Player " << player -> getName() << "'s turn" << endl;
 
@@ -31,7 +31,8 @@ void Play::playGame(Player *player, Game *object){
         cout << "\nYour guess is incorrect, your turn ends.\n";
         return;
     } else {
-        playGame(player, object);
+        player -> setGameWinner(continueTurn);
+        return;
     }
 }
 
@@ -57,6 +58,7 @@ bool Play::guessLetter(Game *object){
 
 bool Play::guessPhrase(Game *object){
     string guessedPhrase = "";
+    cout << object -> getUpdatedPhrase() << endl;
     cout << "Guess the phrase: ";
     std::getline(cin, guessedPhrase);
     cin.get();
@@ -80,6 +82,7 @@ bool Play::checkLetter(char letterGuess, Game *object){
 
     if(letterShows > 0){
         cout << "That's correct! That letter shows up " << letterShows << " time(s).\n";
+        object -> updatePhrase(object);
         return true;
     }
 
@@ -88,7 +91,10 @@ bool Play::checkLetter(char letterGuess, Game *object){
 
 bool Play::turnOption(Game *object){
     bool checkGuess = false;
-    cout << "Would you like to guess another letter (1) or try to guess the phrase (2)? ";
+
+    cout << object -> getUpdatedPhrase() << endl;
+
+    cout << "\nWould you like to guess another letter (1) or try to guess the phrase (2)? ";
     cin >> playerOption;
     if(playerOption == 1){
         checkGuess = guessLetter(object);
