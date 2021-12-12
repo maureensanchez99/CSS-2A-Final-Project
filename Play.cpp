@@ -16,10 +16,10 @@ void Play::playGame(Player *player, Game *object){
     continueTurn = guessLetter(object); //starts turn for player
 
     if(continueTurn == false){
-        playGame(player, object);
-    } else {
-        cout << "Round ends\n";
+        cout << "\nYour guess is incorrect, your turn ends.\n";
         return;
+    } else {
+        playGame(player, object);
     }
 }
 

@@ -44,6 +44,10 @@ bool playerTurn(vector<Player> &players, Game &phrase){
         } else {
             playerTurn(players, phrase);//recursive call to repeat this function
         }
+        string gamePhrase = phrase.getPhrase();
+        if(gamePhrase[0] = ' '){
+            playerTurn(players, phrase);
+        }
     }
     return true;
 }
