@@ -55,8 +55,12 @@ bool Play::guessLetter(Game *object){
 }
 
 bool Play::guessPhrase(Game *object){
+    string guessedPhrase = "";
     cout << "Guess the phrase: ";
-    cin >> Game::guessPhrase;
+    std::getline(cin, guessedPhrase);
+    cin.get();
+
+    guessedPhrase = Game::guessPhrase;
     bool isCorrect = Game::checkPhrase(Game::guessPhrase, object); //send player's guess and hidden phrase to be compared
 
     return isCorrect;

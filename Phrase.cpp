@@ -8,10 +8,10 @@
 using namespace std;
 
 Phrase::Phrase(){
-    category[0] = "Programming, (6, 8, 11)";
-    category[1] = "Popular Anime, (5, 6)";
-    category[2] = "Colleges in Salinas,CA, (8, 9, 7)";
-    category[3] = "Computer Science Pioneers, (3, 8)";
+    category[0] = "Programming (6, 8, 11)";
+    category[1] = "Popular Anime (5, 6)";
+    category[2] = "Colleges in Salinas,CA (8, 9, 7)";
+    category[3] = "Computer Science Pioneers (3, 8)";
     category[4] = "Local Attractions (8, 3, 8)";
 
     phrase[0] = "object oriented programming";
