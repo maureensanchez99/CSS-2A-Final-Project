@@ -22,6 +22,8 @@ public:
     void setPhrase(std::string chosenPhrase_);
     std::string getCategory() const;
     void setLetterGuess(char letterGuess_);
+    void setUpdatedPhrase(std::string chosenPhrase_);
+    std::string getUpdatedPhrase() const;
 
     void printsoFar(Game *object, std::string guessPhrase_);//updates phrase letter visibility as the game goes on
 };

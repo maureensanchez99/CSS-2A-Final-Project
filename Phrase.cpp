@@ -43,11 +43,7 @@ std::string Phrase::getPhrase(int num){
 }
 
 void Phrase::displayPhrase(Game *object){
-    string guessPhrase = object -> getPhrase();
-
-    if(guessPhrase.empty()){
-        chooseNum(object);
-    }
+    string guessPhrase = object -> getUpdatedPhrase();
 
     object -> printsoFar(object, guessPhrase);
 

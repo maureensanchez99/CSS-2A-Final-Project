@@ -11,8 +11,20 @@ Play::Play(){
 
 void Play::playGame(Player *player, Game *object){
     bool continueTurn = false;
+    Phrase phrase;
+
+    phrase.chooseNum(object);//creates the phrase that players have to guess
+    string guessPhrase = object -> getPhrase();
+    guessPhrase = string(guessPhrase.size(), '-');
+
+
+    cout << "The phrase is: " << guessPhrase << endl;
+
+    cout << "\nCategory hint: " << object -> getCategory();
+    cout << endl << endl;
 
     cout << endl << "It is Player " << player -> getName() << "'s turn" << endl;
+
     continueTurn = guessLetter(object); //starts turn for player
 
     if(continueTurn == false){
