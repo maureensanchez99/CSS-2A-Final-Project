@@ -22,6 +22,7 @@ Phrase::Phrase(){
 }
 
 void Phrase::chooseNum(Game *object){
+    srand(time(0));
     int randNum = rand() % 5;
 
     std::string chosenCategory = getCategory(randNum);
