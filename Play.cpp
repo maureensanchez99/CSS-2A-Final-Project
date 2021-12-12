@@ -34,7 +34,7 @@ bool Play::guessLetter(Game *object){
     if(checkGuess == false){
         return checkGuess;
     } else {
-        checkGuess = turnOption(object);
+        return checkGuess = turnOption(object);
     }
 }
 
