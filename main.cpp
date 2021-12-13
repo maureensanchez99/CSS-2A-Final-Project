@@ -20,7 +20,6 @@ void addPlayers(vector<Player> &players){//adds players to vector to hold each p
             cout << "What is the name of Player " << i+1 << ": ";
             cin >> userName;
             players.push_back(userName);
-            //players[i].setName(userName);
         }
     } else {
         cout << "Game cannot be played if playing alone or with more than 4 players. Try again" << endl << endl;
@@ -80,9 +79,9 @@ int main(){
     cout << "Play with others to figure out what are the hidden phrases \nwith only knowing how many words and letters there \nshould be along with a category hint relating to the phrase."
         << endl << endl << "Hint: the numbers that are with the category hint indicate how many words and \nhow many letters in those words that make up the phrase. "<< endl << endl;
 
-    do{//game keeps repeating until players choose to play game again
-        addPlayers(players);//game starts out by getting players' names
+    addPlayers(players);//game starts out by getting players' names
 
+    do{//game keeps repeating until players choose to play game again
         while(gameOver == false){
             gameOver = playerTurn(players, phrase);
         }
