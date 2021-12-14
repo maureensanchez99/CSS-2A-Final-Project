@@ -56,7 +56,6 @@ char Game::getLetterGuess(){
 }
 
 void Game::setUpdatedPhrase(std::string chosenPhrase_){
-
     chosenPhrase = chosenPhrase_;
 }
 

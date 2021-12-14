@@ -32,7 +32,8 @@ void Play::playGame(Player *player, Game *object){
         return;
     } else {
         player -> setGameWinner(continueTurn);
-        return;
+        //add score
+        exit;
     }
 }
 

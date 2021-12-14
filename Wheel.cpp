@@ -4,8 +4,7 @@
 #include <cstdlib>
 using namespace std;
 
-Wheel::Wheel()
-{
+Wheel::Wheel(){
   scores[0] = 300;
   scores[1] = 700;
   scores[2] = 0;
@@ -33,33 +32,27 @@ Wheel::Wheel()
   scores[24] = 800;
 }
 
-int Wheel::getRandomScore()
-{
+int Wheel::getRandomScore(){
   srand(time(0));
   int score_ = (rand()%25)+1;
   return scores[score_];
 }
 
-void Wheel::displayScores()
-{
+void Wheel::displayScores(){
   cout << "WHEEL OF FORTUNE POINTS\n";
-  for (int i = 0 ; i < 6 ; i++)
-  {
+  for (int i = 0 ; i < 6 ; i++){
     cout << scores[i] << " | ";
   }
   cout << endl;
-  for (int i = 6 ; i < 12 ; i++)
-  {
+  for (int i = 6 ; i < 12 ; i++){
     cout << scores[i] << " | ";
   }
   cout << endl;
-  for (int i = 12 ; i < 19 ; i++)
-  {
+  for (int i = 12 ; i < 19 ; i++){
     cout << scores[i] << " | ";
   }
   cout << endl;
-  for (int i = 19 ; i < 25 ; i++)
-  {
+  for (int i = 19 ; i < 25 ; i++){
     cout << scores[i] << " | ";
   }
   cout << endl;

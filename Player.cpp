@@ -41,8 +41,7 @@ void Player::addToTotalScore(int score_){
   totalScore.push_back(score_);
 }
 
-void Player::displayAddedScores()
-{
+void Player::displayAddedScores(){
   int playerScore = 0;
   for (int i = 0; i < totalScore.size(); i++)
   {
