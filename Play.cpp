@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include "Play.h"
 #include "Phrase.h"
 using namespace std;
@@ -16,6 +17,13 @@ void Play::playGame(Player *player, Game *object){
     phrase.chooseNum(object);//creates the phrase that players have to guess
     string guessPhrase = object -> getPhrase();
     guessPhrase = string(guessPhrase.size(), '-');
+    for(int i = 0; i < guessPhrase.size(); i++){
+        string correctPhrase = object -> getPhrase();
+        char correctChar = correctPhrase[i];
+        if(correctChar == ' '){
+            correctChar = " ";
+        }
+    }
     object -> setUpdatedPhrase(guessPhrase);
 
     cout << "\nThe phrase is: " << guessPhrase << endl;
@@ -27,13 +35,14 @@ void Play::playGame(Player *player, Game *object){
 
     continueTurn = guessLetter(object); //starts turn for player
 
-    if(continueTurn == false){
+    if(continueTurn == true){
+        player -> setGameWinner(continueTurn);
+        player ->addToTotalScore(1000); //player gets points for guessing phrase correctly
+        exit(0);
+    } else {
+
         cout << "\nYour guess is incorrect, your turn ends.\n";
         return;
-    } else {
-        player -> setGameWinner(continueTurn);
-        //add score
-        exit;
     }
 }
 
