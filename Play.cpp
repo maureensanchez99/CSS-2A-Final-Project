@@ -15,13 +15,13 @@ void Play::playGame(Player *player, Game *object){
     Phrase phrase;
 
     phrase.chooseNum(object);//creates the phrase that players have to guess
-    string guessPhrase = object -> getPhrase();
-    guessPhrase = string(guessPhrase.size(), '-');
+    string guessPhrase = object -> getPhrase(); //sets the phrase to Game variable to keep track of phrase
+    guessPhrase = string(guessPhrase.size(), '-'); //hides the variable
     for(int i = 0; i < guessPhrase.size(); i++){
         string correctPhrase = object -> getPhrase();
         char correctChar = correctPhrase[i];
         if(correctChar == ' '){
-            correctChar = " ";
+            correctChar = ' ';
         }
     }
     object -> setUpdatedPhrase(guessPhrase);
@@ -36,13 +36,13 @@ void Play::playGame(Player *player, Game *object){
     continueTurn = guessLetter(object); //starts turn for player
 
     if(continueTurn == true){
-        player -> setGameWinner(continueTurn);
-        player ->addToTotalScore(1000); //player gets points for guessing phrase correctly
-        exit(0);
+        player -> setGameWinner(true);
+        player -> addToTotalScore(1000); //player gets points for guessing phrase correctly
+        return;
     } else {
-
         cout << "\nYour guess is incorrect, your turn ends.\n";
         return;
+
     }
 }
 

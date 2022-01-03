@@ -61,9 +61,12 @@ bool playAnotherRound(){
 void winner(vector<Player> &players){
     for(int i = 0; i < players.size(); i++){
         bool winner = players[i].getGameWinner();
-        if(winner == true){
+        if(winner == false){
             cout << "\nGame over! Congrats Player " << players[i].getName() << "on your win!";
             //need to figure out how to determine which player is the winner; maybe make another variable in Player class?
+        } else {
+            cout << "\nGAME OVER! \nNo one won";
+            return;
         }
     }
 }
@@ -85,8 +88,10 @@ int main(){
             gameOver = playerTurn(players, phrase);
         }
 
-        playAgain = playAnotherRound();
+        playAgain = playAnotherRound();//asks players if they want to play another round
     } while(playAgain == false);
+
+    winner(players);
 
     return 0;
 }
